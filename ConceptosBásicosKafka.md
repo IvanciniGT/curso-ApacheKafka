@@ -35,6 +35,24 @@ Las réplicas ofrecen: Alta disponibilidad
 Conjunto de bytes recibidos por Kafka desde un Productor.
 Cada mensaje se almacena en una partición de un topic.
 
+Cuando yo hago un programa, lo que manejo no son bytes, son OBJETOS, que referenciamos desde variables.
+Por ejemplo, un texto: "ESTE ES MI MENSAJE" ---> BYTES
+"Á" ----> UTF-8 --->
+
+1 Byte = 8 bits            TIPO DE DATO
+                                                        BYTE       SHORT     INT
+00000001 00000000 00000000 00000000            --->    1 0 0 0     256 0    16777216
+                                                        STRING (ASCII)
+00000001 00000000 00000000 00000000            --->     á    h7     
+
+Mis mensajes van a ser traducidor a Bytes por un Serializador (función)
+
+Un mensaje puede ser: 
+* Solo una secuencia de bytes 
+* 2 secuencias de bytes:
+    - Una se interpreta como una clave/identificador   
+    - Una se interpreta como un valor   
+
 ### Logs
 Ficheros que almacenan mensajes o eventos. 
 Tenemos muchos ficheros por cada partición, que contendrán mensajes 
