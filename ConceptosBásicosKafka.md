@@ -129,8 +129,14 @@ kafka$ bin/kafka-topic.sh --describe --topic NOMBRE_TOPIC --bootstrap-server <UR
 ``` sh
 kafka$ bin/kafka-topic.sh --create --topic NOMBRE_TOPIC --bootstrap-server <URL-SERVIDOR-KAFKA>
 ```
+### Crear un topic indicándole número de replicas y particiones
+``` sh
+kafka$ bin/kafka-topic.sh --create --topic NOMBRE_TOPIC --bootstrap-server <URL-SERVIDOR-KAFKA> \
+    --replication-factor <NUMERO_REPLICAS> --partitions <NUMERO_PARTICIONES>
+```
 
 ### Borrar un topic
 ``` sh
 kafka$ bin/kafka-topic.sh --delete --topic NOMBRE_TOPIC --bootstrap-server <URL-SERVIDOR-KAFKA>
 ```
+
