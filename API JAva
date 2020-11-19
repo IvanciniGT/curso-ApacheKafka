@@ -1,0 +1,37 @@
+# Comando maven para crear un proyecto JAVA
+
+mvn \
+    archetype:generate \
+    -DgroupId=es.curso \
+    -DartifactId=mi-productor \
+    -DarchetypeArtifactId=maven-archetype-quickstart \
+    -DarchetypeVersion=1.4 \
+    -DinteractiveMode=false
+
+
+# Comando maven para compilar
+mvn compile
+
+# Comando maven para compilar y empaquetar
+mvn package
+
+# Ejecutar programa: 
+mvn -q exec:java
+
+
+###########################################################################
+
+Libreria JAVA - KAFKA: kafka-client
+
+Paquete: org.apache.kafka.clients.producer <--- PRODUCTORES DE MENSAJES
+                Producer
+                    --- KafkaProducer       <--- Nuestra clase base para trabajar
+                ProducerConfig              <--- Configuración del productor de mensajes
+                
+                ProducerRecord              <--- Mensaje / Evento
+                
+                Callback                    <--- Donde definiremos una función a la que Kafka llamará 
+                                                 después de haber procesaro nuestro mensaje
+                RecordMetadata              <--- Información sobre el evento/ mensaje ya procesado por kafka
+                
+Paquete: org.apache.kafka.clients.consumer <--- CONSUMIDORES DE MENSAJES

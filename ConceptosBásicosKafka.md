@@ -300,6 +300,27 @@ bin/kafka-reassign-partitions.sh \
     --list
 ```
 
+# Custom Producers
+
+## Dependencias
+
+Libreria Kafka: kafka-clients
+Packete: og.apache.kafka.clients.producer
+
+## Objetos 
+Producer          Productor que se encarga del envío de mensajes (INTERFAZ)
+    KafkaProducer - A través de un Properties
+ProducerConfig    Parámetros de configuración para crear el Producer
+ProducerRecord    Mensaje
+--------------
+Callback          (INTERFAZ) onComplete
+RecoderMetadata   Contenia rea información del mensaje ya incluido en KAFKA: Topic, Partition, Offset
+
+
+
+
+
+
 
 
 
