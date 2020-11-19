@@ -11,9 +11,24 @@ import java.util.Properties;
 
 public class MiProductor implements Callback {
     
+    private static volatile MiProductor productor=null;
+    
+    public static MiProductor getInstance(  ){
+        synchronized(MiProductor.class){  // Semaforo
+            if(productor==null){
+                synchronized(MiProductor.class){
+                    // Obtener la dirección del cluster
+                    String CLUSTER="127.0.0.1:9092";
+                    productor=new MiProductor( CLUSTER );
+                }
+            }
+        }
+        return productor;
+    }
+    
     private Producer<String, String> producer; // Generar una variable privada
     
-    public MiProductor(String cluster){  // Java Sin nombre: Constructor
+    private MiProductor(String cluster){  // Java Sin nombre: Constructor
         
     // Aqui es donde definimos la configuración del Productor
     System.out.println( "Generando properties..." );
