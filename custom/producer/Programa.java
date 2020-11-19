@@ -10,9 +10,9 @@ public class Programa {
         
         String TOPICO="topicA";
         
-        MiProductor.getInstance().enviarMensaje( TOPICO , "CLAVE1", "MENSAJE 1");
-        MiProductor.getInstance().enviarMensaje( TOPICO , "CLAVE2", "MENSAJE 2");
-        MiProductor.getInstance().enviarMensaje( TOPICO , "CLAVE3", "MENSAJE 3");
+        MiProductor.getInstance().enviarMensaje( TOPICO , "1", "MENSAJE 1");
+        MiProductor.getInstance().enviarMensaje( TOPICO , "2", "MENSAJE 2");
+        MiProductor.getInstance().enviarMensaje( TOPICO , "3", "MENSAJE 3");
 
     // Esperar a que el usuario pulse ENTER para cerrarme
     System.out.println( "Esperando respuesta... (ENTER para salir)" );

@@ -8,7 +8,10 @@ public class MiParticionador implements Partitioner{
     
     public int partition(String topic, Object key, byte[] keyBytes,
                      Object value, byte[] valueBytes, Cluster cluster){
-        return 1; 
+                         
+        int numeroParticiones=cluster.partitionsForTopic(topic).size();
+       
+        return Integer.parseInt(key.toString())%numeroParticiones; // Logica
     }
     
     public void close(){}
