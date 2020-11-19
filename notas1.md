@@ -171,7 +171,7 @@ Cada personas facilmente puede hacer 2 movimientos por segundo
 100000 partidas simultaneas en el mundo: 1 segundo: 2,4 Millones de mensajes
 Ponemos muchos ordenadores a trabajar simultaneamente (CLUSTER)
 
-## Caso de uso número 2: ETL + BIGDATA
+## Caso de uso número 3: ETL + BIGDATA
 
 ### La tienda online de amazón
 
@@ -190,3 +190,10 @@ Servidor 4 Amazon
 ...
 Servidor tropecientos ciencuenta Amazon
     Log
+
+## Caso de uso número 3: IoT
+
+Sensores / Actuadores
+    VVV
+    Sensor de Temperatura
+    Sensor humedad
