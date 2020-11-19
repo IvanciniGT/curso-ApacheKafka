@@ -7,6 +7,8 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
+
+
 import java.util.Properties;
 
 public class MiProductor implements Callback {
@@ -46,6 +48,8 @@ public class MiProductor implements Callback {
             // Un mensaje siempre lleva un valor: VALUE
         configuracion.put(   ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  "org.apache.kafka.common.serialization.StringSerializer");
         // Aquí acaba la configuración del productor de mensajes
+
+        configuracion.put(   ProducerConfig.PARTITIONER_CLASS_CONFIG,  "es.curso.MiParticionador");
         
     // Creamos y arrancamos el producer.
         // EQUIVALENTE A CUANDO EJECUTABAMOS bin/kafka-console-producer.sh
@@ -91,5 +95,8 @@ public class MiProductor implements Callback {
             System.out.println( "  TOPIC:     " + metadata.topic() );
         }
     }
+    
+    
+
     
 }
